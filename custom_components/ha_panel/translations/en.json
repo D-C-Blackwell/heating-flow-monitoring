@@ -1,0 +1,77 @@
+{
+  "title": "HA Panel",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add a display panel",
+        "description": "Choose a panel ID matching the display setup. After adding the integration, use Configure to select your entities.",
+        "data": {
+          "panel_id": "Panel ID",
+          "title": "Screen title",
+          "count": "Number of readings",
+          "timezone": "POSIX timezone"
+        }
+      }
+    },
+    "error": {
+      "invalid_panel_id": "Use 1\u201324 lowercase letters, digits, hyphens or underscores."
+    },
+    "abort": {
+      "already_configured": "This panel ID is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Edit the display",
+        "description": "Changes are sent to the physical display and dashboard card automatically.",
+        "menu_options": {
+          "panel": "Screen title, layout and timezone",
+          "slot_1": "Reading 1",
+          "slot_2": "Reading 2",
+          "slot_3": "Reading 3",
+          "slot_4": "Reading 4",
+          "slot_5": "Reading 5",
+          "slot_6": "Reading 6",
+          "weather": "Weather page and page rotation"
+        }
+      },
+      "panel": {
+        "title": "Screen settings",
+        "data": {
+          "title": "Screen title",
+          "count": "Number of readings",
+          "timezone": "POSIX timezone"
+        }
+      },
+      "row": {
+        "title": "Reading {slot}",
+        "description": "Choose a source. To show a temperature difference, select flow as Source and return as Subtract. Leave Unit override blank to use the source unit. Labels and values also appear on the dashboard.",
+        "data": {
+          "enabled": "Show this reading",
+          "label": "Label",
+          "entity": "Source entity",
+          "subtract": "Subtract entity (optional, for delta)",
+          "unit": "Unit override (blank uses source unit)",
+          "decimals": "Decimal places",
+          "color": "Value colour",
+          "warning": "Amber at or above (optional)",
+          "critical": "Red at or above (optional)"
+        }
+      },
+      "weather": {
+        "title": "Weather page",
+        "description": "The non-touch screen alternates between readings and weather. Select the weather provider and the connected temperature sensor. Forecasts are refreshed every 15 minutes. Rain timing is shown when the provider supports hourly forecasts.",
+        "data": {
+          "weather_enabled": "Show the second weather page",
+          "weather_entity": "Weather provider",
+          "temperature_sensor": "Connected temperature sensor (optional)",
+          "page_seconds": "Seconds on each page (10\u2013300)"
+        }
+      }
+    },
+    "error": {
+      "weather_required": "Select a weather entity before enabling the weather page."
+    }
+  }
+}

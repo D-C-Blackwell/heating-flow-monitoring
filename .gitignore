@@ -1,0 +1,28 @@
+# Local credentials and deployment state
+.env
+.env.*
+!.env.example
+secrets.yaml
+secrets.*
+config.local.h
+credentials*
+*.pem
+*.key
+# Device memory, firmware binaries and build products
+*.bin
+*.elf
+*.map
+*.o
+*.a
+build/
+.pio/
+arduino-data/
+# Local caches and tooling
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+.DS_Store
+Thumbs.db
+.ha-panel-backups/

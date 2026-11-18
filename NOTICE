@@ -1,0 +1,7 @@
+Original project code: MIT, Copyright (c) 2026 D. C. Blackwell.
+Inter font software: Copyright 2020 The Inter Project Authors;
+SIL Open Font License 1.1, see firmware/ha_panel/fonts/OFL.txt.
+Adafruit, Arduino/ESP8266, ArduinoJson, WiFiManager and PubSubClient
+are external dependencies and retain their respective licenses.
+No third-party library source or preconfigured device flash image is bundled.
+Grant Vortex is a manufacturer/product reference, not a claim of affiliation.
