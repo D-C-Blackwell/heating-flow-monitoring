@@ -22,11 +22,12 @@ The display and the sensor nodes are **three separate devices**:
 | --- | --- | --- |
 | LCD dashboard | LoLin NodeMCU V3, ESP8266 / ESP-12E | Runs this Arduino sketch; receives readings from Home Assistant through MQTT |
 | Water tank sensor node | ESP32-C3 with two water-temperature probes | Measures tank heating flow and return and exposes both as Home Assistant entities |
-| Boiler sensor node | Separate ESP32 with BME680 environmental sensor and water-temperature probes | Supplies boiler pipe flow/return and environmental readings to Home Assistant; exact ESP32 board variant is not yet confirmed |
+| Boiler sensor node | diymore ESP32-S3 DevKitC-1 N16R8 development board with 2.4 GHz antenna, BME680 environmental sensor and Solisara waterproof DS18B20 probes | Supplies boiler pipe flow/return and environmental readings to Home Assistant |
 
 The LCD is **ESP8266, not ESP32-C3**. The BME680 measures environmental conditions;
-it is not the water-temperature probe. The exact probe models, sensor-node pin
-assignments and boiler ESP32 module variant are not assumed by this repository.
+it is not the water-temperature probe. The confirmed boiler temperature probes
+are Solisara waterproof DS18B20 sensors with 1 m cables. Sensor-node pin
+assignments are not assumed by this repository.
 The two sensor nodes already publish to Home Assistant through their own
 integration/firmware. That sensor-node firmware is not included or replaced here.
 Any other source of compatible Home Assistant sensor entities can also be used.
