@@ -39,12 +39,12 @@ The display and the sensor nodes are **three separate devices**:
 | Device | Hardware | Role |
 | --- | --- | --- |
 | LCD dashboard | LoLin NodeMCU V3, ESP8266 / ESP-12E | Runs this Arduino sketch; receives readings from Home Assistant through MQTT |
-| Water tank sensor node | ESP32-C3 with two water-temperature probes | Measures tank heating flow and return and exposes both as Home Assistant entities |
+| Water tank sensor node | ESP32-C3 with two Solisara waterproof DS18B20 probes, 1 m cables (same type as the boiler) | Measures tank heating flow and return and exposes both as Home Assistant entities |
 | Boiler sensor node | diymore ESP32-S3 DevKitC-1 N16R8 development board with 2.4 GHz antenna, BME680 environmental sensor and Solisara waterproof DS18B20 probes | Supplies boiler pipe flow/return and environmental readings to Home Assistant |
 
 The LCD is **ESP8266, not ESP32-C3**. The BME680 measures environmental conditions;
-it is not the water-temperature probe. The confirmed boiler temperature probes
-are Solisara waterproof DS18B20 sensors with 1 m cables. Sensor-node pin
+it is not the water-temperature probe. Both the boiler and water tank use the same Solisara waterproof DS18B20
+temperature probes with 1 m cables. Sensor-node pin
 assignments are not assumed by this repository.
 The two sensor nodes already publish to Home Assistant through their own
 integration/firmware. That sensor-node firmware is not included or replaced here.
@@ -213,6 +213,20 @@ Compile your own firmware from this sanitized source. This repository does not
 include an installation's configured binary or whole-flash backup.
 
 ## 5. Configure the physical display
+
+The following are generated setup illustrations, not screenshots from a live
+device. Network names, device IDs, broker addresses and credentials are
+placeholders. The real portal may look slightly different.
+
+![Connect to the LCD setup portal](docs/images/lcd-setup-connect-guide.png)
+
+![First-time Wi-Fi and MQTT configuration form with placeholders](docs/images/lcd-first-time-setup-form.png)
+
+The setup Wi-Fi password shown on the LCD, your home Wi-Fi password, and your
+MQTT password serve different purposes. Enter your home network credentials
+in the Wi-Fi fields and your broker account in the MQTT fields. The broker
+address can be a hostname or an address you provide locally; no real address
+is embedded in these images.
 
 The default broker setting is empty. On first setup, the display opens a
 protected setup Wi-Fi network. Its network name/password and portal address
