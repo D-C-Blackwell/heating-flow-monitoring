@@ -13,3 +13,7 @@ class PublicDefaultsTests(unittest.TestCase):
     def test_broker_is_entered_at_setup(self):
         source = Path("firmware/ha_panel/config.h").read_text()
         self.assertIn('DEFAULT_BROKER[] = ""', source)
+
+    def test_broker_port_is_entered_at_setup(self):
+        source = Path("firmware/ha_panel/ha_panel.ino").read_text()
+        self.assertIn('"MQTT port", "", 5', source)

@@ -75,7 +75,7 @@ NetworkSettings settings;
 Adafruit_ILI9341 tft(TFT_CS, TFT_DC, TFT_RST);
 WiFiManager wifiManager;
 WiFiManagerParameter brokerField("broker", "MQTT broker IP / hostname", DEFAULT_BROKER, 63);
-WiFiManagerParameter portField("port", "MQTT port", "1883", 5);
+WiFiManagerParameter portField("port", "MQTT port", "", 5);
 WiFiManagerParameter userField("user", "MQTT username", "", 63);
 WiFiManagerParameter passwordField("mqtt_password", "MQTT password (blank keeps saved)", "", 95, "type='password'");
 WiFiManagerParameter panelField("panel", "Panel ID in Home Assistant", DEFAULT_PANEL_ID, 24);
@@ -734,7 +734,7 @@ void loadSettings() {
   if (settings.magic != CONFIG_MAGIC || checksum(settings) != settings.checksum) {
     memset(&settings, 0, sizeof(settings));
     strlcpy(settings.broker, DEFAULT_BROKER, sizeof(settings.broker));
-    strlcpy(settings.port, "1883", sizeof(settings.port));
+    strlcpy(settings.port, "", sizeof(settings.port));
     strlcpy(settings.panel, DEFAULT_PANEL_ID, sizeof(settings.panel));
   }
   settings.broker[63] = settings.port[5] = settings.user[63] = settings.password[95] = settings.panel[24] = 0;

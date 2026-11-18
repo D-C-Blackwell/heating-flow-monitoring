@@ -154,10 +154,16 @@ to Ireland/UK daylight-saving rules.
 
 ## 3. Weather and rotation
 
-In **Configure > Weather page and page rotation**, enable weather and select
-your own Home Assistant weather entity. You can also choose a separate local
-temperature sensor. Provider temperature and sensor temperature stay distinct.
-Weather starts disabled until a source is configured.
+First install and configure a weather integration/provider in Home Assistant
+so it exposes a working `weather.*` entity. Follow that integration's setup
+instructions and confirm its weather entity is available and provides forecasts.
+Installing this project alone does not create a weather provider.
+
+Then open the HA Panel integration's **Configure > Weather page and page
+rotation**, enable weather, and select that entity. You can reach the integration
+settings from the companion HA Panel card's cog as well. You can also choose a
+separate local temperature sensor. Provider temperature and sensor temperature
+stay distinct. Weather starts disabled until a source is configured.
 
 The page shows current conditions, a rain outlook, supplied precipitation
 probabilities and three upcoming periods. Hourly forecasts are preferred;
@@ -216,11 +222,12 @@ include an installation's configured binary or whole-flash backup.
 
 The following are generated setup illustrations, not screenshots from a live
 device. Network names, device IDs, broker addresses and credentials are
-placeholders. The real portal may look slightly different.
+placeholders, including `YOUR_MQTT_PORT`. The real portal may look slightly
+different.
 
-![Connect to the LCD setup portal](docs/images/lcd-setup-connect-guide.png)
+<img src="docs/images/lcd-setup-connect-guide.png" alt="Connect to the LCD setup portal" width="560">
 
-![First-time Wi-Fi and MQTT configuration form with placeholders](docs/images/lcd-first-time-setup-form.png)
+<img src="docs/images/lcd-first-time-setup-form.png" alt="First-time Wi-Fi and MQTT setup using placeholders" width="480">
 
 The setup Wi-Fi password shown on the LCD, your home Wi-Fi password, and your
 MQTT password serve different purposes. Enter your home network credentials
