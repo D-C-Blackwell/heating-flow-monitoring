@@ -8,7 +8,7 @@
     "weather"
   ],
   "codeowners": [],
-  "documentation": "https://github.com/D-C-Blackwell/home-assistant-heating-panel",
+  "documentation": "https://github.com/D-C-Blackwell/heating-flow-monitoring",
   "iot_class": "local_push",
-  "issue_tracker": "https://github.com/D-C-Blackwell/home-assistant-heating-panel/issues"
+  "issue_tracker": "https://github.com/D-C-Blackwell/heating-flow-monitoring/issues"
 }

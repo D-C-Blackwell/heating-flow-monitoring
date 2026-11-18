@@ -1,18 +1,36 @@
-# Home Assistant Heating Panel
+# Heating Flow Monitoring
 
-A small, live Home Assistant dashboard for a NodeMCU ESP8266 and a portrait
-240 x 320 ILI9341 TFT. Configure entities in Home Assistant; changes reach the
-screen over MQTT even when no dashboard browser is open.
+Live boiler flow, return and temperature-difference monitoring for a condensing
+boiler, using Home Assistant, an ESP8266 and a portrait 240 x 320 ILI9341 TFT.
+The primary purpose is to observe how the boiler's water-temperature setting
+affects flow and return, with a return-temperature target below 50 C for this
+installation. Water tank flow/return monitoring is an additional feature.
 
-The screen rotates through a configurable readings grid, optional weather,
-a Grant Vortex-style boiler diagram, and a separate green water tank diagram.
-Each circuit has a large flow temperature, return temperature, and delta.
+Configure entities in Home Assistant; changes reach the screen over MQTT even
+when no dashboard browser is open. The screen rotates through configurable
+readings, optional weather, a Grant Vortex-style boiler diagram, and a separate
+green water tank diagram. Each circuit shows flow, return and delta.
 
-| Boiler page | Water tank page |
-| --- | --- |
-| ![Boiler layout with synthetic sample values](docs/images/boiler-page-preview.png) | ![Water tank layout with synthetic sample values](docs/images/water-tank-page-preview.png) |
+## Why monitor return temperature?
 
-These images contain invented example readings, not installation data.
+Condensing performance depends on return water temperature. Grant's
+[oil boiler guidance](https://www.grantuk.com/knowledge-hub/faqs/oil-boilers/)
+describes efficient condensing operation with return water around 50 C or less.
+This project makes the flow/return relationship visible when assessing a
+suitable boiler water-temperature thermostat setting for the installation.
+It displays temperatures; it does not calculate combustion efficiency, adjust
+the burner, or control the thermostat.
+
+Pipe-mounted probes indicate pipe-surface temperature; contact and insulation
+affect how closely that represents the water temperature. The target concerns
+boiler return water, not the temperature of stored domestic hot water.
+
+| First page: readings | Boiler page | Water tank page |
+| --- | --- | --- |
+| ![Readings grid rendered preview](docs/images/readings-page-preview.png) | ![Boiler layout rendered preview](docs/images/boiler-page-preview.png) | ![Water tank layout rendered preview](docs/images/water-tank-page-preview.png) |
+
+These are native-resolution rendered previews with invented example readings,
+not photographs of a physical screen or live installation data.
 
 ## Hardware
 
